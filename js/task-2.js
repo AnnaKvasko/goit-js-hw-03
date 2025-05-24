@@ -1,15 +1,16 @@
 function makeArray (firstArray, secondArray, maxLength) {
-    const resultArray = [];
-    const firstArrayLength = firstArray.Length;
-    const secondArrayLength = secondArray.Length;
-    const minLength = Math.min(firstArray.Length, secondArray.Length);
-    const maxLength = Math.max(firstArray.Length, secondArray.Length);
+    const twiceArray = firstArray.concat(secondArray);
 
-    for (let i=0; i < maxLenght; i++) {
-        if (i < minLenght) 
-
+    if (twiceArray.length >  maxLength) {
+        return twiceArray.slice(0, maxLength);
     }
 
-
-
+    return twiceArray;
 }
+
+console.log(makeArray(["Mango", "Poly"], ["Ajax", "Chelsea"], 3)); // ["Mango", "Poly", "Ajax"]
+console.log(makeArray(["Mango", "Poly", "Houston"], ["Ajax", "Chelsea"], 4)); // ["Mango", "Poly", "Houston", "Ajax"]
+console.log(makeArray(["Mango"], ["Ajax", "Chelsea", "Poly", "Houston"], 3)); // ["Mango", "Ajax", "Chelsea"]
+console.log(makeArray(["Earth", "Jupiter"], ["Neptune", "Uranus"], 2)); // ["Earth", "Jupiter"]
+console.log(makeArray(["Earth", "Jupiter"], ["Neptune", "Uranus"], 4)); // ["Earth", "Jupiter", "Neptune", "Uranus"]
+console.log(makeArray(["Earth", "Jupiter"], ["Neptune", "Uranus", "Venus"], 0)); // []
